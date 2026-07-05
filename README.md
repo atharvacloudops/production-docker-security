@@ -1,21 +1,30 @@
 # Production Docker & Container Security
 
-## Day 1 - Multi-Stage Dockerfile Mastery
+3-week internship project covering containerisation, security scanning, 
+multi-service orchestration and runtime security.
 
-### Image Size Comparison
-| Dockerfile | Base Image | Size |
-|---|---|---|
-| Dockerfile.naive | python:3.11 | ~500MB |
-| Dockerfile.optimised | python:3.11-slim | ~180MB |
-| Dockerfile.final | python:3.11-alpine (multi-stage) | ~85MB |
+## Project Structure
+- Dockerfile.naive — baseline ~500MB image
+- Dockerfile.optimised — slim image ~180MB  
+- Dockerfile.final — multi-stage alpine <100MB
+- docker-compose.yml — 4 service orchestration
+- .github/workflows — Trivy CI scanning
 
-### Key Techniques Used
-- Multi-stage builds (builder + runtime stages)
-- Alpine base image
-- Layer cache ordering
-- .dockerignore to exclude unnecessary files
-- Non-root user for security
+## How to Run
 
-### How to Run
+### Single container
 docker build -f Dockerfile.final -t myapp:final .
 docker run -p 8000:8000 myapp:final
+
+### Full stack
+docker compose up
+
+## Image Size Comparison
+| Dockerfile | Base | Size |
+|---|---|---|
+| naive | python:3.11 | ~500MB |
+| optimised | python:3.11-slim | ~180MB |
+| final | python:3.11-alpine multi-stage | <100MB |
+
+## Tech Stack
+Docker, FastAPI, PostgreSQL, Redis, Nginx, GitHub Actions, Trivy 

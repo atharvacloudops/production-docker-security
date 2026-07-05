@@ -2,7 +2,7 @@
 
 A complete containerisation project covering multi-stage builds, security scanning, 
 multi-service orchestration, and container runtime security.
-
+---
 ## Project Structure
 
 ```text

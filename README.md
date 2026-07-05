@@ -5,6 +5,7 @@ multi-service orchestration, and container runtime security.
 
 ## Project Structure
 
+```text
 production-docker-security/
 ├── app/
 │   ├── main.py              # FastAPI application
@@ -21,7 +22,7 @@ production-docker-security/
 ├── docker-compose.prod.yml  # Production overrides
 ├── seccomp-profile.json     # Container syscall restrictions
 └── .dockerignore            # Build context exclusions
-
+```
 ---
 
 ## 📊 Image Size Optimisation

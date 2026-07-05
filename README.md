@@ -21,7 +21,9 @@ production-docker-security/
 ├── seccomp-profile.json     # Container syscall restrictions
 └── .dockerignore            # Build context exclusions
 
-## Image Size Optimisation
+---
+
+## 📊 Image Size Optimisation
 
 | Dockerfile | Base Image | Size | Technique |
 |---|---|---|---|
@@ -30,33 +32,39 @@ production-docker-security/
 | Dockerfile.final | python:3.11-alpine | <100MB | Multi-stage + alpine |
 | Dockerfile.buildkit | python:3.11-alpine | <100MB | BuildKit cache mounts |
 
-## Key Features
+> 85% image size reduction from naive to final 🚀
 
-### Multi-Stage Builds
+---
+
+## ✨ Key Features
+
+### 🏗️ Multi-Stage Builds
 Reduced Docker image size by 85% using builder and runtime stages.
 Only production dependencies are copied to the final image.
 
-### Security
-- Non-root user inside container
-- Seccomp profile to restrict allowed syscalls
-- .dockerignore to prevent sensitive files entering build context
-- Trivy vulnerability scanning on every push via GitHub Actions
+### 🔒 Security
+- ✅ Non-root user inside container
+- ✅ Seccomp profile to restrict allowed syscalls
+- ✅ `.dockerignore` to prevent sensitive files entering build context
+- ✅ Trivy vulnerability scanning on every push via GitHub Actions
 
-### BuildKit Advanced Features
-- Cache mounts for faster pip installs across builds
-- Multi-architecture build supporting linux/amd64 and linux/arm64
+### ⚡ BuildKit Advanced Features
+- ✅ Cache mounts for faster pip installs across builds
+- ✅ Multi-architecture build supporting `linux/amd64` and `linux/arm64`
 
-### Docker Compose Orchestration
+### 🐙 Docker Compose Orchestration
 Multi-service setup including:
-- FastAPI app
-- PostgreSQL with health checks
-- Redis
-- Nginx reverse proxy
-- Dev and prod override files
+- ✅ FastAPI app
+- ✅ PostgreSQL with health checks
+- ✅ Redis
+- ✅ Nginx reverse proxy
+- ✅ Dev and prod override files
 
-### CI/CD Pipeline
+### 🔄 CI/CD Pipeline
 GitHub Actions workflow runs Trivy image scan on every push.
 Pipeline blocks deployment if CRITICAL vulnerabilities are found.
+
+---
 
 ## How to Run
 

@@ -5,8 +5,7 @@ multi-service orchestration, and container runtime security.
 
 ## Project Structure
 
-production-docker-security
-/
+production-docker-security/
 ├── app/
 │   ├── main.py              # FastAPI application
 │   └── requirements.txt     # Python dependencies

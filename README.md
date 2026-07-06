@@ -4,7 +4,7 @@ A complete containerisation project covering multi-stage builds, security scanni
 multi-service orchestration, and container runtime security.
 ---
 ## Project Structure
-
+---
 ```text
 production-docker-security/
 ├── app/
